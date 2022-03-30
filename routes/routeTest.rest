@@ -1,0 +1,23 @@
+GET http://localhost:3000/tareas
+
+################################
+
+POST http://localhost:3000/tareas
+Content-Type: application/json
+
+{   
+    "id": 1,
+    "name": "tarea2",
+    "puntos": 10,
+    "materia": "materia1",
+    "fechaEntrega": "2022-03-28"
+}
+
+################################
+
+PUT http://localhost:3000/tareas/6242304ef17b02b1754680e4
+Content-Type: application/json
+
+{   
+    "id": 2
+}
