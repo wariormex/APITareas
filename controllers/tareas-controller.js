@@ -99,7 +99,34 @@ function updateTarea(req, res) {
 }
 
 function deleteTarea(req, res) {
+    console.log('Borrando tarea...');
+    console.log(req.body);
 
+    const tareaId = req.params.id;
+    const newTarea = req.body;
+
+    Tarea.findOneAndDelete({_id: tareaId}, (error, result) => {
+        if(error) {
+            return res.status(500).json({
+                error: true,
+                message: "Server Down",
+                code: 0
+            });
+        }
+        if(!result){
+            return res.status(400).json({
+                error: true,
+                message: "Client Error",
+                code: 10
+            });
+        }
+        return res.status(200).json({
+            error: false,
+            message: "OK",
+            code: 20,
+            data: result
+        });
+    });
 }
 
 module.exports = {createTarea, retrieveTarea, findAllTareas, updateTarea, deleteTarea};

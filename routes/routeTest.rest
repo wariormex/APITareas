@@ -6,7 +6,7 @@ POST http://localhost:3000/tareas
 Content-Type: application/json
 
 {   
-    "id": 1,
+    "id": 2,
     "name": "tarea2",
     "puntos": 10,
     "materia": "materia1",
@@ -21,3 +21,10 @@ Content-Type: application/json
 {   
     "id": 2
 }
+
+################################
+
+DELETE http://localhost:3000/tareas/6243b37d9c3ad166ec18db99
+Content-Type: application/json
+
+
